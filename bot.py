@@ -4,7 +4,7 @@ from aiogram import Bot, Dispatcher
 from functions import get_user_info
 
 
-TOKEN = "7833868916:AAF8BoJ2IcTkHDXPugGWGxWOMcFSx5L2uQM"
+TOKEN = "BOT_TOKEN"
 
 if not TOKEN:
     raise ValueError("Bot token is not set! Please set the BOT_TOKEN environment variable or hardcode it.")
@@ -13,7 +13,7 @@ bot = Bot(token=TOKEN)
 dp = Dispatcher(bot=bot)
 
 async def on_startup(bot: Bot):
-    await bot.send_message(1064272609, "Bot started! ")
+    await bot.send_message('id_chat', "Bot started! ")
 
 async def main():
     dp.startup.register(on_startup)
